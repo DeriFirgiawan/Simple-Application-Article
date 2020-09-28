@@ -1,0 +1,18 @@
+<%- include('header.ejs'); %> 
+
+<div class="container mt-3">
+  <div class="jumbotron shadow">
+    <h1><%= article.title %> </h1>
+    <h5>Written By: <%= author %> </h5>
+    <p><%= article.body %> </p>
+    <hr>
+    <% if(user) { %>
+      <% if(user.id == article.author) { %> 
+          <a href="/articles/edit/<%= article._id %>" class="btn btn-outline-warning">Edit</a>
+          <a href="#" class="btn btn-outline-danger delete-article" data-id="<%= article._id %>">Delete</a>
+      <% } %> 
+    <% } %> 
+  </div>
+</div>
+
+<%- include('footer.ejs'); %> 

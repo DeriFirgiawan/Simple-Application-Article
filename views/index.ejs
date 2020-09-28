@@ -1,0 +1,17 @@
+<%- include('header.ejs'); %>
+
+<div class="container">
+  
+  <h1>Home Page</h1>
+  <ul class="list-group">
+    <% articles.forEach((article) => { %>
+        <li class="list-group-item">
+          <a href="/articles/<%= article._id %>">
+            <%= article.title %>
+          </a>
+        </li>
+    <% }); %> 
+  </ul>
+</div>
+
+<%- include('footer.ejs'); %>
